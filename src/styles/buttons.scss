@@ -2,6 +2,8 @@ $dark-background: #353535;
 $dark-border: #212529;
 $color: white;
 $cheked-background: #4e4e4e;
+$nigth-switcher: rgba(182, 182, 21, 0.767);
+$sun-switcher: $cheked-background;
 
 @mixin theme-colors($dark-theme: true) {
 	@if $dark-theme {
@@ -15,14 +17,16 @@ $cheked-background: #4e4e4e;
 	@include theme-colors($dark-theme: false);
 	body.dark-mode & {
 		@include theme-colors($dark-theme: true);
-        &.active {
-            &.btn-light{
+        &.btn-light{
+            &.active{
+                background-color: $cheked-background;
+                border-color: $dark-border;
+            }
+            &:hover {
                 background-color: $cheked-background;
                 border-color: $dark-border;
             }
         }
 	}
-    
-    
 }
 

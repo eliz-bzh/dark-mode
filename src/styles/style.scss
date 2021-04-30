@@ -3,16 +3,19 @@
 
 $default-background: white;
 $default-color: black;
+$default-nav-color: #dae0e5;
 $color-b: red;
 $dark-color-b: rgb(248, 64, 178);
+$dark-nav-color: $cheked-background;
 
 body {
-	padding: 25px;
 	background-color: $default-background;
 	color: $default-color;
-	font-size: 25px;
 	b {
 		color: $color-b;
+	}
+	nav{
+		background-color: $default-nav-color;
 	}
 }
 .dark-mode {
@@ -21,14 +24,32 @@ body {
 	b {
 		color: $dark-color-b;
 	}
+	nav{
+		background-color: $dark-nav-color;
+	}
 	input {
 		color: $color;
 		background-color: $dark-background;
-		border-color: $dark-border;
+		
 		&:focus-within {
 			color: $color;
 			border-color: $dark-border;
 			background-color: $dark-background;
+		}
+		&[type="text"] {
+			border-color: $dark-border;
+		}
+		
+
+		&[type="radio"] {
+			border-color: aqua; 
+			
+		}
+		
+		  
+		  /* только чекбоксы */
+		&[type="checkbox"]:checked {
+			color: rgb(248, 64, 178);
 		}
 	}
 }

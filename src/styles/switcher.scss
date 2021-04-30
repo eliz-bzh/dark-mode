@@ -1,4 +1,6 @@
 /* The switch - the box around the slider */
+@import './buttons.scss';
+@import './style.scss';
 .switch {
     position: relative;
     display: inline-block;
@@ -21,7 +23,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #dadada;
+    background-color: $default-nav-color; //color sun switcher 
+    box-shadow: 0 0 3px $dark-border; //border color sun switcher without focus
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
@@ -38,26 +41,28 @@
     margin: auto 0;
     -webkit-transition: 0.4s;
     transition: 0.4s;
-    box-shadow: 0 0px 15px #2020203d;
-    background: black url('https://i.ibb.co/FxzBYR9/night.png');
+    box-shadow: 0 0px 15px $sun-switcher;
+    background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 70% 70%;
   }
-  
+  //background
   input:checked + .slider {
-    background-color: #dadada;
+    background-color: $cheked-background;
+    box-shadow: 0 0 3px $dark-border;
   }
-  
+  //border
   input:focus + .slider {
-    box-shadow: 0 0 1px #dadada;
+    box-shadow: 0 0 3px $dark-border; // border color for night (focus)
   }
   
   input:checked + .slider:before {
     -webkit-transform: translateX(24px);
     -ms-transform: translateX(24px);
     transform: translateX(24px);
-    background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+    box-shadow: 0 0px 15px $nigth-switcher; //img color
+    background: black url('https://i.ibb.co/FxzBYR9/night.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 70% 70%;
@@ -66,6 +71,7 @@
   /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
+    
   }
   
   .slider.round:before {
