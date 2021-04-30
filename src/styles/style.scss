@@ -1,0 +1,34 @@
+@import './card.scss';
+@import './buttons.scss';
+
+$default-background: white;
+$default-color: black;
+$color-b: red;
+$dark-color-b: rgb(248, 64, 178);
+
+body {
+	padding: 25px;
+	background-color: $default-background;
+	color: $default-color;
+	font-size: 25px;
+	b {
+		color: $color-b;
+	}
+}
+.dark-mode {
+	background-color: $dark-background;
+	color: $color;
+	b {
+		color: $dark-color-b;
+	}
+	input {
+		color: $color;
+		background-color: $dark-background;
+		border-color: $dark-border;
+		&:focus-within {
+			color: $color;
+			border-color: $dark-border;
+			background-color: $dark-background;
+		}
+	}
+}

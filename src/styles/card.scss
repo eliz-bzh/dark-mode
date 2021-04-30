@@ -1,0 +1,23 @@
+$dark-background: #353535;
+$dark-border: #212529;
+
+@mixin theme-colors($dark-theme: true) {
+	@if $dark-theme {
+		background-color: $dark-background;
+		border-color: $dark-border;
+	}
+}
+  
+.card {
+	@include theme-colors($dark-theme: false);
+	body.dark-mode & {
+		@include theme-colors($dark-theme: true);
+	}
+}
+
+.list-group-item {
+	@include theme-colors($dark-theme: false);
+	body.dark-mode & {
+		@include theme-colors($dark-theme: true);
+	}
+}

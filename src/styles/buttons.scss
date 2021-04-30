@@ -1,0 +1,28 @@
+$dark-background: #353535;
+$dark-border: #212529;
+$color: white;
+$cheked-background: #4e4e4e;
+
+@mixin theme-colors($dark-theme: true) {
+	@if $dark-theme {
+        color: $color;
+		background-color: $dark-background;
+		border-color: $dark-border;
+	}
+}
+  
+.btn {
+	@include theme-colors($dark-theme: false);
+	body.dark-mode & {
+		@include theme-colors($dark-theme: true);
+        &.active {
+            &.btn-light{
+                background-color: $cheked-background;
+                border-color: $dark-border;
+            }
+        }
+	}
+    
+    
+}
+
