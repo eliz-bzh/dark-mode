@@ -1,27 +1,40 @@
+import React, { useState } from 'react';
 import { ToggleButton, ToggleButtonGroup, Form, Navbar, Nav } from 'react-bootstrap';
-import './App.css';
+//import './App.css';
 import CardElement from './components/card';
 import './styles/_all.scss';
 import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import ViewComfyIcon from '@material-ui/icons/ViewComfy';
 import ListElement from './components/listItem';
+import Switcher from './components/switcher';
+import ArrowUpwardOutlinedIcon from '@material-ui/icons/ArrowUpwardOutlined';
+
 
 function App() {
 
-  const myFunction = () => {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-  }
+  const [showScroll, setShowScroll] = useState(false)
+
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 400) {
+      setShowScroll(true)
+    } else if (showScroll && window.pageYOffset <= 400) {
+      setShowScroll(false)
+    }
+  };
+
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  window.addEventListener('scroll', checkScrollTop)
 
   return (
     <div className='container'>
-
+      <span className='logo' />
       <h1>Switch me!</h1>
+      <Switcher />
       <Navbar collapseOnSelect expand="lg" >
-        <label id="switch" className="switch">
-          <input type="checkbox" onClick={() => myFunction()} id="slider" />
-          <span className="slider round"></span>
-        </label>
+
         <Nav.Item>
           <Nav.Link style={{ display: 'inline-block' }} className='text-white mr-3'>Главная</Nav.Link>
         </Nav.Item>
@@ -39,7 +52,13 @@ function App() {
         )}
       </ToggleButtonGroup>
       <ListElement />
+      <ListElement />
+      <ListElement />
+      <ListElement />
+      <ListElement />
+      <ListElement />
       <CardElement />
+      <ArrowUpwardOutlinedIcon className="scrollTop" onClick={scrollTop} style={{ height: 40, display: showScroll ? 'flex' : 'none' }} />
     </div>
   );
 }

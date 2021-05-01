@@ -1,12 +1,4 @@
-@import './card.scss';
-@import './buttons.scss';
-
-$default-background: white;
-$default-color: black;
-$default-nav-color: #dae0e5;
-$color-b: red;
-$dark-color-b: rgb(248, 64, 178);
-$dark-nav-color: $cheked-background;
+@import './variables.scss';
 
 body {
 	background-color: $default-background;
@@ -16,8 +8,39 @@ body {
 	}
 	nav{
 		background-color: $default-nav-color;
+		.nav-item{
+			color: $default-color;
+		}
+	}
+	.scrollTop {
+		position: fixed;
+		bottom: 50px;
+		align-items: flex-end;
+		height: 20px;
+		justify-content: end;
+		z-index: 1000;
+		cursor: pointer;
+		animation: fadeIn 0.3s;
+		transition: opacity 0.4s;
+		opacity: 0.5;
+		right: 150px;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	.logo{
+		display: block;
+		margin: auto;
+		mix-blend-mode: multiply;
+		background-image: url('../logo_transparent.png');
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		width: 20%;
+    	height: 130px;
 	}
 }
+
+
 .dark-mode {
 	background-color: $dark-background;
 	color: $color;
@@ -38,18 +61,6 @@ body {
 		}
 		&[type="text"] {
 			border-color: $dark-border;
-		}
-		
-
-		&[type="radio"] {
-			border-color: aqua; 
-			
-		}
-		
-		  
-		  /* только чекбоксы */
-		&[type="checkbox"]:checked {
-			color: rgb(248, 64, 178);
 		}
 	}
 }

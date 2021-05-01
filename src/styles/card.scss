@@ -1,5 +1,4 @@
-$dark-background: #353535;
-$dark-border: #212529;
+@import './variables.scss';
 
 @mixin theme-colors($dark-theme: true) {
 	@if $dark-theme {
