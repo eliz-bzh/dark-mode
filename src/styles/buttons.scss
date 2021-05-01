@@ -14,11 +14,25 @@
 		@include theme-colors($dark-theme: true);
         &.btn-light{
             &.active{
-                background-color: $cheked-background;
+                color: $active-text-button;
+                background-color: $active-background-button;
                 border-color: $dark-border;
             }
             &:hover {
-                background-color: $cheked-background;
+                color: $active-text-button;
+                background-color: $active-background-button;
+                border-color: $dark-border;
+            }
+        }
+        &.btn-outline-dark{
+            &.active{
+                color: $active-text-button;
+                background-color: $active-background-button;
+                border-color: $dark-border;
+            }
+            &:hover {
+                color: $active-text-button;
+                background-color: $active-background-button;
                 border-color: $dark-border;
             }
         }

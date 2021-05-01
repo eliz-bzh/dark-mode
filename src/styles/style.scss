@@ -12,6 +12,7 @@ body {
 			color: $default-color;
 		}
 	}
+	
 	.scrollTop {
 		position: fixed;
 		bottom: 50px;
@@ -37,30 +38,5 @@ body {
 		background-size: 100% 100%;
 		width: 20%;
     	height: 130px;
-	}
-}
-
-
-.dark-mode {
-	background-color: $dark-background;
-	color: $color;
-	b {
-		color: $dark-color-b;
-	}
-	nav{
-		background-color: $dark-nav-color;
-	}
-	input {
-		color: $color;
-		background-color: $dark-background;
-		
-		&:focus-within {
-			color: $color;
-			border-color: $dark-border;
-			background-color: $dark-background;
-		}
-		&[type="text"] {
-			border-color: $dark-border;
-		}
 	}
 }
