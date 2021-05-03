@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className='container'>
-      <span className='logo' />
+      <span className='logo'></span>
       <h1>Switch me!</h1>
       <Switcher />
       <Navbar collapseOnSelect expand="lg" >
